@@ -1,0 +1,1 @@
+from django.forms import ModelFormfrom .models import Photoclass TransformPhoto(ModelForm):	class Meta():		model = Photo		fields = '__all__'
