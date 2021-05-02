@@ -12,11 +12,11 @@
 * Responsive
 
 <p>Construí um modelo de site para um cliente, onde o objetivo é fazer postagens de games com todas as informações necessarioas com direcionamento 
-de pagina para donwload atraves de um link externo. Para isso foi utilizado Django e banco de dados postgreSQL + S3(AMS.Amazon) um tipo de repositorio onde armazenamos as imagens cadastradas. Trabalhamos com CSS e framework bootstrap 4 para deixar o site totalmente responsive e configurado para varios dispositivos.</p><a href="https://github.com/divanov1/photo-album-app">Referencia</a> 
+de pagina para donwload atraves de um link externo. Para isso foi utilizado Django e banco de dados postgreSQL + S3(AMS.Amazon) um tipo de repositorio onde armazenamos as imagens cadastradas. Trabalhamos com CSS e framework bootstrap 4 para deixar o site totalmente responsive e configurado para varios dispositivos.<a href="https://github.com/divanov1/photo-album-app">Referencia</a></p>
 
 <a href="https://app-damahero.herokuapp.com/">DEMO</a> 
-<p>Como usar ?</p> 
-<a href="#">Video Tutorial</a>
+<p>Como usar ? / <a href="#">Video Tutorial</a></p> 
+
 
 ### Arquivos no repositorio
 * requirements.txt
