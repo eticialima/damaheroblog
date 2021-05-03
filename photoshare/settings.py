@@ -138,6 +138,6 @@ AWS_QUERYSTRING_AUTH = False
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 #user login e senha / nome do bucket
-AWS_ACCESS_KEY_ID = 'AKIAVFAL26GZVVVZZWED'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'damahero'
+AWS_ACCESS_KEY_ID = 'Seu id'
+AWS_SECRET_ACCESS_KEY = 'Sua key'
+AWS_STORAGE_BUCKET_NAME = 'nome do seu bucket'
