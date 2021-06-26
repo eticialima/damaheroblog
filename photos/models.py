@@ -24,10 +24,7 @@ class Photo(models.Model):
     req_memoriavideo = models.CharField(max_length=150, blank=True)
     req_direct = models.CharField(max_length=150, blank=True)
     req_sistema = models.CharField(max_length=150, blank=True)
-    req_volumedisco = models.CharField(max_length=150, blank=True)
-
-
-
+    req_volumedisco = models.CharField(max_length=150, blank=True) 
     # Botão
     button_mega = models.URLField(max_length=300, blank=True)
     button_media = models.URLField(max_length=300, blank=True)
