@@ -30,8 +30,7 @@ def addPhoto(request):
         if data['category'] != 'none':
             category = Category.objects.get(id=data['category'])
         elif data['category_new'] != '':
-            category, created = Category.objects.get_or_create(
-                name=data['category_new'])
+            category, created = Category.objects.get_or_create(name=data['category_new'])
         else:
             category = None
 
@@ -54,7 +53,6 @@ def addPhoto(request):
             req_direct=data['req_direct'],
             req_sistema=data['req_sistema'],
             req_volumedisco=data['req_volumedisco'],
-
             button_mega=data['button_mega'],
             button_media=data['button_media'],
             )
