@@ -17,14 +17,7 @@ class Photo(models.Model):
     info_designers = models.CharField(max_length=150)
     info_developers = models.CharField(max_length=150)
     info_publish = models.CharField(max_length=150)
-    info_genero = models.CharField(max_length=150)
-    # Requerimentos
-    req_processador = models.CharField(max_length=150)
-    req_memoria = models.CharField(max_length=150)
-    req_memoriavideo = models.CharField(max_length=150)
-    req_direct = models.CharField(max_length=150)
-    req_sistema = models.CharField(max_length=150)
-    req_volumedisco = models.CharField(max_length=150) 
+    info_genero = models.CharField(max_length=150) 
     # Botão
     button_mega = models.URLField(max_length=300)
     button_media = models.URLField(max_length=300)

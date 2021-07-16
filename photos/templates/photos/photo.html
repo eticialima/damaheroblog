@@ -19,14 +19,13 @@
     </div> 
 </div> 
 <div class="container">
-    <div class="row justify-content-center "> 
+    <div class="row "> 
         <div class="col-12">
             <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Voltar</a>
         </div>
         <div class="col-12">
             <h1>{{ photo.titulo }}</h1>
-            <div>
-                <!-- IMAGEM DO JOGO  -->
+            <div> 
                 <img style="max-width: 100%; max-height: 100%; box-shadow: 0 20px 8px rgb(0 0 0 / 6%);" src="{{photo.image.url}}">
             </div>
         </div> 
@@ -62,37 +61,6 @@
                 <tr>
                     <td>Genero</td>
                     <td>{{photo.info_genero}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-6">
-            <h3>Requisitos Minimos</h3>
-            <table class="table table-sm">
-                <tbody>
-                <tr>
-                    <td>Processador</td>
-                    <td>{{photo.req_processador}}</td>
-                </tr>
-                <tr>
-                    <td>Memória</td>
-                    <td>{{photo.req_memoria}}</td>
-                </tr>
-                <tr>
-                    <td>Memória de vídeo</td>
-                    <td>{{photo.req_memoriavideo}}</td>
-                </tr>
-                <tr>
-                    <td>Direct3D</td>
-                    <td>{{photo.req_direct}}</td>
-                </tr>
-                <tr>
-                    <td>Sistemas Operacionais</td>
-                    <td>{{photo.req_sistema}}</td>
-                </tr>
-                <tr>
-                    <td>Espaço</td>
-                    <td>{{photo.req_volumedisco}}</td>
                 </tr>
                 </tbody>
             </table>
