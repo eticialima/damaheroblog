@@ -17,8 +17,7 @@
     <div class="mx-auto text-center">
         <img class="logo" src="{% static 'img/logo.png' %}" alt="logo">
     </div> 
-</div>
-
+</div> 
 <div class="container p-5"> 
     <form method="get">
         <input type="text" id="search" name="search" class="form-control" placeholder="Buscar...">
@@ -45,49 +44,43 @@
             </div>
         </div>
         <!-- POST JOGOS  -->
-        <div class="col-md-9">
-            <div class="row">
-                {% for photo in photos %}
-                <div class="col-lg-4 col-sm-6">
-                    <div class="Card-config card my-2">
-                        <div class="image">
-                            <a href="{% url 'photo' photo.id %}">
-                                <img class="smartify" src="{{photo.image.url}}" alt="Card image cap">
-                            </a>
-                        </div>
-                        <div class="content-two">
-                            <h5 class="card-title">{{ photo.titulo }}</h5>
-                            <small>Category: {{photo.category.name}}</small>
-                        </div>
-                        <div class="content-two">
-                            <h3><a href="{% url 'photo' photo.id %}">Eu Quero!</a>
-                            </h3>
-                        </div>
+        <div class="col-md-9"> 
+            {% for photo in photos %}
+            <div class="col-lg-4 col-sm-6">
+                <div class="Card-config card my-2">
+                    <div class="image">
+                        <a href="{% url 'photo' photo.id %}">
+                            <img class="smartify" src="{{photo.image.url}}" alt="Card image cap">
+                        </a>
+                    </div>
+                    <div class="content-two">
+                        <h5 class="card-title">{{ photo.titulo }}</h5>
+                        <small>Category: {{photo.category.name}}</small>
+                    </div>
+                    <div class="content-two">
+                        <h3><a href="{% url 'photo' photo.id %}">Eu Quero!</a>
+                        </h3>
                     </div>
                 </div>
-                {% empty %}
-                <h3>No photos...</h3>
-                {% endfor %}
             </div>
+            {% empty %}
+            <h3>No photos...</h3>
+            {% endfor %} 
         </div>
     </div>
 </div>
-<footer class="footer-area">
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="footer-content">
-                    <h1>Venha baixar varios jogos gratuitamente !</h1>
-                    <a href="{% url 'gallery' %}" class="default-btn" target="_blank">
-                        Clique Aqui para Baixar !
-                    </a>
-                    <div class="copyright">
-                        <span>Criado por <a href="#" target="_blank">Leticia Lima</a></span>
-                    </div>
-                </div>
+<footer class="footer-area"> 
+    <div class="container">
+        <div class="footer-content">
+            <h1>Venha baixar varios jogos gratuitamente !</h1>
+            <a href="{% url 'gallery' %}" class="default-btn" target="_blank">
+                Clique Aqui para Baixar !
+            </a>
+            <div class="copyright">
+                <span>Criado por <a href="#" target="_blank">Leticia Lima</a></span>
             </div>
         </div>
-    </div>
+    </div> 
 </footer> 
 {% load static %}
 </body>
