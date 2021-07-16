@@ -6,127 +6,85 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Add Photo</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-    <!-- CSS  -->
+    <meta name='viewport' content='width=device-width, initial-scale=1'>  
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 
-<body class="m-5 bg_form">
-<div class="container">
-    <!-- Background image -->
-    <div class="text-center">
-        <div class="mask">
-            <div class="text-white">
-                <h1 class="mb-3 ">Cadastrar Jogo No site</h1>
-                <h4 class="mb-3 ">Olá Leticia Lima, Bem-vinda de volta !</h4>
-            </div>
+<body>
+<div class="container p-5"> 
+    <div class="text-center"> 
+        <h1 class="py-2 ">Cadastrar Jogo No site</h1>
+        <h4 class="py-2">Olá Leticia Lima, Bem-vinda de volta !</h4> 
+    </div> 
+    <h4>Preencha as informações do seu jogo</h4> 
+    <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Voltar</a> 
+    <form method='POST' action="" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <div class="form-group py-2">
+            <select name="category" class="form-control">
+                <option value='none'>Selecionar Categoria...</option>
+                {% for category in categories %}
+                <option value='{{category.id}}'>{{category.name}}</option>
+                {% endfor %}
+            </select>
         </div>
-    </div>
-    <!-- Background image -->
-    <div class="container bg ">
-        <div class="tittle1 text-center" style="margin: 20px;">
-            <h4>Preencha as informações do seu jogo</h4>
+
+        <div class="form-group py-2">
+            <label>Criar nova categoria (opcional)</label>
+            <input name="category_new" type="text" placeholder="Criar nova categoria..." class="form-control">
         </div>
-        <!-- Pagina  -->
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <a href="{% url 'gallery' %}" class="btn btn-dark my-3">Voltar</a>
-                <div>
-                    <!-- Form para adicionar novo poste -->
-                    <form method='POST' action="" enctype="multipart/form-data">
-                        {% csrf_token %}
 
-                        <!-- Form Imagem e Categoria OK -->
-                        <div class="form-group m-3">
-                            <select name="category" class="form-control">
-                                <option value='none'>Selecionar Categoria...</option>
-                                {% for category in categories %}
-                                <option value='{{category.id}}'>{{category.name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+        <div class="form-group py-2">
+            <label>Carregar Thumbnail</label>
+            <input required name="images" type="file" multiple class="form-control-file">
+        </div>
+    
+        <div class="form-group py-2">
+            <input required name="titulo" type="text" value="{{ photo.titulo }}" placeholder="Titulo do jogo..." class="form-control">
+        </div>
+    
+        <div class="form-group py-2">
+            <input required name="description" type="text" value="{{ photo.description }}"  placeholder="Descrição do jogo..." class="form-control">
+        </div>
 
-                        <div class="form-group m-3">
-                            <label>Criar nova categoria (opcional)</label>
-                            <input name="category_new" type="text" placeholder="Criar nova categoria..."
-                                   class="form-control">
-                        </div>
-
-                        <div class="form-group m-3">
-                            <label>Carregar Thumbnail</label>
-                            <input required name="images" type="file" multiple class="form-control-file">
-                        </div>
-                        <!-- Form Imagem e Categoria OK -->
-
-                        <!-- titulo  -->
-                        <div class="form-group m-3">
-                            <input required name="titulo" type="text" value="{{ photo.titulo }}"
-                                   placeholder="Titulo do jogo..."
-                                   class="form-control">
-                        </div>
-                        <!-- Input - DESCRIÇÃO DO JOGO  -->
-                        <div class="form-group m-3">
-                            <input required name="description" type="text" value="{{ photo.description }}"
-                                   placeholder="Descrição do jogo..." class="form-control">
-                        </div>
-
-                        <!-- Input - DESCRIÇÃO DO JOGO  -->
-                        <div class="col-12">
-
-                            <div class="form-group m-3">
-                                <label>Informações</label>
-                                <input required name="info_typegame" type="text" value="{{ photo.info_typegame }}"
-                                       placeholder="Tipo de Jogo" class="form-control">
-                                <input required name="info_datelaunch" type="text" value="{{ photo.info_datelaunch }}"
-                                       placeholder="Data de Lançamento" class="form-control">
-                                <input required name="info_designers" type="text" value="{{ photo.info_designers }}"
-                                       placeholder="Designers" class="form-control">
-                                <input required name="info_developers" type="text" value="{{ photo.info_developers }}"
-                                       placeholder="Desenvolvedores" class="form-control">
-                                <input required name="info_publish" type="text" value="{{ photo.info_publish }}"
-                                       placeholder="Publicado por	" class="form-control">
-                                <input required name="info_genero" type="text" value="{{ photo.info_genero }}"
-                                       placeholder="Genero" class="form-control">
-                            </div>
-
-
-                            <div class="form-group m-3">
-                                <label>Requisitos Minimos</label>
-                                <input required name="req_processador" type="text" value="{{ photo.req_processador }}"
-                                       placeholder="Processador" class="form-control">
-                                <input required name="req_memoria" type="text" value="{{ photo.req_memoria }}"
-                                       placeholder="Memória" class="form-control">
-                                <input required name="req_memoriavideo" type="text" value="{{ photo.req_memoriavideo }}"
-                                       placeholder="Memória de vídeo" class="form-control">
-                                <input required name="req_direct" type="text" value="{{ photo.req_direct }}"
-                                       placeholder="Direct3D" class="form-control">
-                                <input required name="req_sistema" type="text" value="{{ photo.req_sistema }}"
-                                       placeholder="Sistemas Operacionais" class="form-control">
-                                <input required name="req_volumedisco" type="text" value="{{ photo.req_volumedisco }}"
-                                       placeholder="Espaço no HD" class="form-control">
-                            </div>
-
-                            <!-- Input - DESCRIÇÃO DO JOGO -->
-                            <div class="form-group m-3">
-                                <input required name="button_mega" type="text" value="{{ photo.button_mega }}"
-                                       placeholder="Mega.nz link" class="form-control">
-                            </div>
-                            <div class="form-group m-3">
-                                <input required name="button_media" type="text" value="{{ photo.button_media }}"
-                                       placeholder="Mediafire link" class="form-control">
-                            </div>
-                        </div>
-
-                        <button type='submit' class="btn btn-outline-dark m-3">Postar</button>
-                    </form>
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group py-2">
+                    <label>Informações</label>
+                    <input required name="info_typegame" type="text" value="{{ photo.info_typegame }}" placeholder="Tipo de Jogo" class="form-control">
+                    <input required name="info_datelaunch" type="text" value="{{ photo.info_datelaunch }}" placeholder="Data de Lançamento" class="form-control">
+                    <input required name="info_designers" type="text" value="{{ photo.info_designers }}" placeholder="Designers" class="form-control">
+                    <input required name="info_developers" type="text" value="{{ photo.info_developers }}"  placeholder="Desenvolvedores" class="form-control">
+                    <input required name="info_publish" type="text" value="{{ photo.info_publish }}" placeholder="Publicado por	" class="form-control">
+                    <input required name="info_genero" type="text" value="{{ photo.info_genero }}" placeholder="Genero" class="form-control">
                 </div>
             </div>
+            <div class="col-6">
+                <div class="form-group py-2">
+                    <label>Requisitos Minimos</label>
+                    <input required name="req_processador" type="text" value="{{ photo.req_processador }}" placeholder="Processador" class="form-control">
+                    <input required name="req_memoria" type="text" value="{{ photo.req_memoria }}"  placeholder="Memória" class="form-control">
+                    <input required name="req_memoriavideo" type="text" value="{{ photo.req_memoriavideo }}"  placeholder="Memória de vídeo" class="form-control">
+                    <input required name="req_direct" type="text" value="{{ photo.req_direct }}" placeholder="Direct3D" class="form-control">
+                    <input required name="req_sistema" type="text" value="{{ photo.req_sistema }}" placeholder="Sistemas Operacionais" class="form-control">
+                    <input required name="req_volumedisco" type="text" value="{{ photo.req_volumedisco }}" placeholder="Espaço no HD" class="form-control">
+                </div>
+            </div>
+                
         </div>
-    </div>
+            <!-- Input - DESCRIÇÃO DO JOGO -->
+            <div class="form-group py-2">
+                <input required name="button_mega" type="text" value="{{ photo.button_mega }}" placeholder="Mega.nz link" class="form-control">
+            </div>
+            <div class="form-group py-2">
+                <input required name="button_media" type="text" value="{{ photo.button_media }}" placeholder="Mediafire link" class="form-control">
+            </div> 
+        <button type='submit' class="btn btn-outline-dark">Postar</button>
+    </form> 
 </div>
 {% load static %}
 </body>
