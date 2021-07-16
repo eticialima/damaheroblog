@@ -33,14 +33,7 @@ a:hover {
 .logo{
     max-width: 100%;
 }
-
-.d-table {
-  height: 100%;
-  width: 100%;
-}
-.d-table-cell {
-  vertical-align: middle;
-}
+ 
 
 /* Menu Itens */
 .menuitens{
@@ -211,21 +204,11 @@ a:hover {
   background-color: #fff;
   color: #000;
 }
-
-/* Tela Cadastrar Jogo */
-.bg_form {
-     background: #b12a2a;
-}
-
+ 
 .bg {
     background-color: rgba(255, 255, 255, 0.911);
     box-shadow: 0 10px 20px rgb(0 0 0 / 10%), 0 6px 6px rgb(0 0 0 / 10%);
     padding: 5px 20px;
 }
-
-.mask{
-    background-color: rgba(0, 0, 0, 0.6)
-}
-
-/* Tela view */
+ 
 
