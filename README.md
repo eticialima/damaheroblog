@@ -15,19 +15,7 @@
 
 <a href="https://app-damahero.herokuapp.com/">DEMO</a> 
 <p>Como usar ? / <a href="#">Video Tutorial</a></p> 
-
-
-### Arquivos no repositorio
-* requirements.txt
-* Procfile
-* manage.py
-* db.sqlite3
-* staticfiles.pasta
-* photoshare.pasta
-* photo.pasta
-* myenv.pasta f
-* git.pasta
-
+ 
 ### Como usar ? 
 <p>- Django </P> 
 
