@@ -7,14 +7,14 @@
 ### Ferramentas
 * Django
 * CSS 
-* Bootstrap 4
+* Bootstrap 5
 * Site tema download
 * Responsive
 
-<p>Construí um modelo de site para um cliente, onde o objetivo é fazer postagens de games com todas as informações necessarioas com direcionamento de pagina para donwload atraves de um link externo. Para isso foi utilizado Django e banco de dados postgreSQL + S3(AWS.Amazon) um tipo de repositorio onde armazenamos as imagens cadastradas. Trabalhamos com CSS e framework bootstrap 4 para deixar o site totalmente responsive e configurado para varios dispositivos. / <a href="https://github.com/divanov11/photo-album-app">Referencia</a> / <a href="https://realpython.com/get-started-with-django-1/">Referencia 2</a></p>
+<p>Construí um modelo de site onde o objetivo é fazer postagens de games com todas as informações necessarioas com direcionamento de pagina para donwload atraves de um link externo. Para isso foi utilizado Django e banco de dados postgreSQL + S3(AWS.Amazon). Trabalhamos com CSS e framework bootstrap 5 para deixar o site totalmente responsive e configurado para varios dispositivos. <a href="https://github.com/divanov11/photo-album-app">Referencia</a> / <a href="https://realpython.com/get-started-with-django-1/">Referencia 2</a></p>
 
-<a href="https://app-damahero.herokuapp.com/">DEMO</a> 
-<p>Como usar ? / <a href="#">Video Tutorial</a></p> 
+<p><a href="https://app-damahero.herokuapp.com/">DEMO</a></p>  
+<p>Como usar ? <a href="#">Video Tutorial</a></p> 
  
 ### Como usar ? 
 <p>- Django </P> 
@@ -40,6 +40,7 @@
 ### Obrigada ❤️
 <p>Qualquer duvida pode me chamar no instagram [@eticialima](https://www.instagram.com/eticialima).</p> 
 <br> 
+
 ###  buymeacoffee buymeacoffee
  
 <a  href="https://www.buymeacoffee.com/leticialima" target="_blank"><img  src="https://cdn.buymeacoffee.com/buttons/default-red.png" alt="Buy Me A Coffee" height="40" width="170" ></a>
